@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Order a product</title>
+</head>
+<body>
+	<table border=1 align=center style="text-align: center">
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Price</th>
+			<th>Category</th>
+			<th>Image</th>
+		</tr>
+		<tbody>
+			<tr th:each="productlist:${productlist}">
+				<td th:text="${productlist.id}" />
+				<td th:text="${productlist.name}" />
+				<td th:text="${productlist.price}" />
+				<td th:text="${productlist.category}" />
+				<td th:img src="${productlist.image}" height="50" width="50" />
+				<img th:src="${productlist.image}" alt="Product image" height="150"
+					width="150">
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<br>
+	<form style="color: black; font-size: 30px; text-align: center;"
+		action="orderproduct" method="post">
+		Enter the ID of the product <input
+			style="color: black; font-size: 25px; text-align: center;"
+			type="number" name="productId" value="Enter the ID of the product"><br>
+		Enter the qty of the product <input
+			style="color: black; font-size: 25px; text-align: center;"
+			type="number" name="qty" value="Enter the ID of the product"><br>
+		Enter your email <input
+			style="color: black; font-size: 25px; text-align: center;"
+			type="text" name="email" value=""><br> Enter your name <input
+			style="color: black; font-size: 25px; text-align: center;"
+			type="text" name="name" value=""><br> <input
+			style="color: black; font-size: 25px; text-align: center;"
+			type="submit" value="Place your order">
+	</form>
+</body>
+</html>

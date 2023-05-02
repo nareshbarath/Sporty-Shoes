@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Payment gateway</title>
+</head>
+<body>
+	<form style="color: black; font-size: 50px; text-align: center;"
+		action=paymentsuccesss method="post">
+		<br> Booking ID:<input type="text" name="id" th:value="${id}"
+			readonly> <br> Total amount<input type="text"
+			name="count" th:value="${totalPrice}" readonly><br> Enter
+		your Card number<input type="number" name="card"><br>
+		Enter your Card pin<input type="password" name="pin"><br>
+		<input type="submit" value="Click to go to pay">
+	</form>
+</body>
+</html>

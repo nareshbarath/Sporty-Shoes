@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Reports list</title>
+</head>
+<body>
+	<form style="color: black; font-size: 30px; text-align: center;"
+		action="searhreports" method="post">
+		<input style="color: black; font-size: 25px; text-align: center;"
+			type="date" name="date" value="Enter the date"><br>
+			<input style="color: black; font-size: 25px; text-align: center;"
+			type="text" name="category" value="Enter the category"><br> <input
+			style="color: black; font-size: 50px; text-align: center;"
+			type="submit" value="Filter reports">
+	</form>
+	<br>
+	<br>
+	<table border=1 align=center style="text-align: center">
+		<tr>
+			<th>ID</th>
+			<th>Date</th>
+			<th>Category</th>
+			<th>Product Name</th>
+			<th>Quantity</th>
+			<th>Total price</th>
+			<th>User email</th>
+			<th>User name</th>
+		</tr>
+		<tbody>
+			<tr th:each="reportList:${reportList}">
+				<td th:text="${reportList.id}" />
+				<td th:text="${reportList.date}" />
+				<td th:text="${reportList.productCategory}" />
+				<td th:text="${reportList.productName}" />
+				<td th:text="${reportList.qty}" />
+				<td th:text="${reportList.totalPrice}" />
+				<td th:text="${reportList.userEmail}" />
+				<td th:text="${reportList.userName}" />
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

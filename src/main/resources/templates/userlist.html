@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>User's list</title>
+</head>
+<body>
+	<form style="color: black; font-size: 50px; text-align: center;"
+		action="searchuser" method="post">
+		<input style="color: black; font-size: 25px; text-align: center;"
+			type="text" name="name" value="Enter the name"><br> <input
+			style="color: black; font-size: 50px; text-align: center;"
+			type="submit" value="Search user">
+	</form>
+	<br>
+	<br>
+	<table border=1 align=center style="text-align: center">
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Username</th>
+			<th>Email</th>
+			<th>Phone</th>
+		</tr>
+		<tbody>
+			<tr th:each="userlist:${userlist}">
+				<td th:text="${userlist.id}" />
+				<td th:text="${userlist.name}" />
+				<td th:text="${userlist.username}" />
+				<td th:text="${userlist.email}" />
+				<td th:text="${userlist.phone}" />
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
